@@ -1,16 +1,10 @@
 
 # coding: utf-8
 
-# In[1]:
-
 
 import pandas as pd
 data = pd.read_csv('Banknote-authentication-dataset.csv')
 data
-
-
-# In[10]:
-
 
 import numpy as np
 variance_mean = np.mean(data['V1'])
@@ -19,16 +13,10 @@ print(f"V1 mean = {variance_mean}")
 print(f"V2 mean = {skewness_mean}")
 
 
-# In[12]:
-
-
 v1_dev = np.std(data["V1"])
 v2_dev = np.std(data["V2"])
 
 print(f"standard deviation for v1 and v2 is {v1_dev} and {v2_dev}")
-
-
-# In[23]:
 
 
 import matplotlib.pyplot as plt
@@ -37,9 +25,7 @@ plt.ylabel('V2')
 plt.scatter(data['V1'],data['V2'])
 
 
-# In[27]:
-
-
+#using kmeans to obtain data clusters
 from sklearn.cluster import KMeans
 v1 = data["V1"]
 v2 = data['V2']
